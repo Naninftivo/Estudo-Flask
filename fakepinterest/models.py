@@ -1,5 +1,4 @@
 # criar os modelos
-from psycopg2.errors import InvalidTablesampleArgument
 from fakepinterest import database
 from datetime import datetime
 
@@ -17,5 +16,5 @@ class Usuario(database.Model):
 class Foto(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     imagem = database.Column(database.String, default="default.png")
-    data_criacao = database.Column(database.DateTime, nullable=False, default=datetime.utcnow)
+    data_criacao = database.Column(database.DateTime, nullable=False, default=datetime.utcnow())
     id_usuario = database.Column(database.Integer, database.ForeignKey("usuario.id"),nullable=False)
