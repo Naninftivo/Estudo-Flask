@@ -15,6 +15,19 @@
 <body>
     <h1>Pagina Principal</h1>
     <h2>descrição da Pagina principal</h2>
+    {% block formulario %}
+    <form method="POST">
+        {{ form.csrf_token }}
+        {{ form.email.label() }}
+        {{ form.email() }}
+
+        {{ form.senha.label() }}
+        {{ form.senha() }}
+
+        {{ form.butao_confirmacao() }}
+
+    </form>
+    {% endblock %}
 </body>
 {% endblock %}
 
